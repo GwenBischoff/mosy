@@ -1,73 +1,116 @@
 /*********************************
 GENERAL
 **********************************/
-body{
-	background-color: #ffcccc;
-	/*rot: #ffcccc; blau: #ccffff; gelb: #ffffcc*/ 
-}
-
 .title{
 	font-size: 2em;
 	text-align: center;
 	margin: 1em;
 }
-
-
+/*********************************
+FONT
+**********************************/
+@font-face{
+    font-family: 'PT Sans';
+    src: url('../font/PT_Sans.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+body{
+    margin: 0;
+    font-family: 'Pt Sans', sans-serif;
+    color: #7eb2c9;
+    font-size: 1.5em
+}
+a{
+	color: #7eb2c9;
+}
+body a:hover, .offcanvas a:focus{
+    color: #1c7aa3;
+}
+/*********************************
+SIDENAV
+**********************************/
+.sideNav {
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #fff; 
+    overflow-x: hidden; 
+    padding-top: 5.5em; 
+    transition: 0.5s;
+}
+.sideNav a {
+    padding: 0.6em 0.6em 0.6em 2em;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: block;
+    transition: 0.3s
+}
+.sideNavIcon{
+    width: 5%;
+    padding: 1.2em 0em 0em 0.7em;
+}
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0.2em;
+    font-size: 2em !important;
+    margin-left: 4.5em;
+}
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
 
 /*********************************
-MENU
+LOGO
 **********************************/
-
-.menuList{
-	list-style: none;
-	background-color: #fff;
-	margin-left: 1em ;
-	margin-right: 1em ;
-	padding-left: 0px;
-	padding-right: 0px;
-	border: 0.05em solid black;
-	border-radius: 5px;
+.logo{
+	width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.menuList li {
-	text-align: center;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	padding-left: 1em;
-	padding-right: 1em;
-	border: 0.05em solid black;
-	/*box-shadow: 2px 3px 2px grey;*/
+/*********************************
+MAIN
+**********************************/
+#mainMenu{
+	margin: 0 1em 0 1em;
+	overflow: auto;
+	display:block;
 }
-
-.menu a{
+#mainMenu a{
 	text-decoration: none;
-	color: black;
 }
-
-/*********************************
-BUTTONS
-**********************************/
-.div_buttons{
-	text-align:center;
+.mainMenuDiv{
+	padding: 0.5em 0 0.5em 0.5em;
+	height: 40%;
+	width: 46%;
+	float: left;
 }
-.back{
-	margin: 0 auto;
-    padding: 0.5em 4.0em 0.5em 4.0em;
-    text-align: center;
-    display: inline-block;
-    font-size: 1em;
-    border-radius: 5px;
-    background-color: #eee;
+#leftUp{
+	border-left: 1px solid #e1e1e1;
+	border-top: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
 }
-.random{
-
-	margin: 0 auto;
-    padding: 0.5em 4.0em 0.5em 4.0em;
-    text-align: center;
-    display: inline-block;
-    font-size: 1em;
-    border-radius: 5px;
-    background-color: #eee;
+#rightUp{
+	border-top: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
+}
+#leftLow{
+	border-left: 1px solid #e1e1e1;
+	border-top: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+}
+#rightLow{
+	border: 1px solid #e1e1e1;
+}
+.mainMenu a:hover, .offcanvas a:focus{
+    color: #1c7aa3;
 }
 
 /*********************************

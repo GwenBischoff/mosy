@@ -2,14 +2,30 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>TempEgg</title>
+	<title>WetterEi</title>
 </head>
 
 <body>
-	<form method="GET" action="index.html">
-        <input type="submit" value="Zur&uuml;ck" class="back"/>
-    </form>
-	<div class="clothes">
+    <!--SideNavigation-->
+    <div id="mySideNav" class="sideNav">
+        <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Main</a>
+        <a href="inside.html">Innen</a>
+        <a href="outside.html">Au&szlig;en</a>
+        <a href="light.html">Licht</a>
+    </div>
+
+    <!--SideNavigation-Icon-->
+    <div class="sideNavIcon" onclick="openNav()">menu</div>
+
+    <!--Logo-->
+    <img src="img/WetterEi.png" alt="WetterEi" class="logo">
+    
+    <!-- Script to open nav-->
+    <script type="text/javascript" src="js/nav.js"></script>
+
+    <!-- Chicken dressed with temperatures -->
+    <div class="clothes">
 	    <ul class="clothesList">
 	        <div class="head"><img src="images/head.jpg" alt="Head" style="width:430px;height:120px;"></div>
 	        <div class="upperbody"><img src="images/upper.jpg" alt="Chest" style="width:430px;height:120px;"></div>
@@ -17,5 +33,4 @@
 	    </ul>
 	</div>
 </body>
-
 </html>
