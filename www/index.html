@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<title>WetterEi</title>
 </head>
+
 <body>
-    <!--SideNavigation-->
-    <div id="mySideNav" class="sideNav">
-        <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
-        <a href="inside.html">Innen</a>
-        <a href="outside.html">Au&szlig;en</a>
-        <a href="clothes.html">Kleidung</a>
-        <a href="light.html">Licht</a>
-    </div>
+    <header>
+        <!--SideNavigation-->
+        <div id="mySideNav" class="sideNav">
+            <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+            <a href="inside.html">Innen</a>
+            <a href="outside.html">Au&szlig;en</a>
+            <a href="clothes.html">Kleidung</a>
+            <a href="light.html">Licht</a>
+        </div>
 
-    <!--SideNavigation-Icon-->
-    <div class="sideNavIcon" onclick="openNav()">menu</div>
+        <!--SideNavigation-Icon-->
+        <div class="sideNavIcon" onclick="openNav()"><i class="fa fa-bars"></i></div>
 
-    <!--Logo-->
-    <img src="img/WetterEi.png" alt="WetterEi" class="logo">
-    
-    <!-- Script to open nav-->
-    <script type="text/javascript" src="js/nav.js"></script>
-
-    <!-- Content -->
-    <div id="mainMenu">
-        <a href="">
-        	<div class="mainMenuDiv" id="leftUp">
-        		Temperatur i
-	    	</div>
-	    </a>
-	    <a href="">
-	        <div class="mainMenuDiv" id="rightUp">
-	        	Temperatur a
-	    	</div>
-	    </a>
-	    <a href="">
-	        <div class="mainMenuDiv" id="leftLow">
-	        	Feuchtigkeit i
-	    	</div>
-	    </a>
-	    <a href="">
-	        <div class="mainMenuDiv" id="rightLow">
-	        	Luftdruck i
-    		</div>
-    	</a>
-    </div>
+        <!--Logo-->
+        <img src="img/WetterEi.png" alt="WetterEi" class="logo">
+        
+        <!-- Script to open nav-->
+        <script type="text/javascript" src="js/nav.js"></script>
+        <script type="text/javascript" src="js/color.js"></script>
+    </header>
+    <section>
+        <!-- Content -->
+        <div id="mainMenu">
+            <a href="inside.html" class="menu_a">
+            	<div class="mainMenuDiv" id="leftUp">
+            		<div class="text">Temperatur <i class="fa fa-home"></i></div>
+                    <div class="text">36&deg;</div>
+    	    	</div>
+    	    </a>
+    	    <a href="outside.html" class="menu_a">
+    	        <div class="mainMenuDiv" id="rightUp">
+    	        	<div class="text">Temperatur <i class="fa fa-tree" aria-hidden="true"></i></div>
+                    <div class="text">36&deg;</div>
+    	    	</div>
+    	    </a>
+    	    <a href="" class="menu_a">
+    	        <div class="mainMenuDiv" id="leftLow">
+    	        	<div class="text">Feuchtigkeit <i class="fa fa-home"></i></div>
+                    <div class="text">60%</div>
+    	    	</div>
+    	    </a>
+    	    <a href="" class="menu_a">
+    	        <div class="mainMenuDiv" id="rightLow">
+    	        	<div class="text">Luftdruck <i class="fa fa-home"></i></div>
+                    <div class="text">20 Pa</div>
+        		</div>
+        	</a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2016 Ein Projekt f&uuml;r Mosy/ITS</p>
+    </footer>
 </body>
 </html>

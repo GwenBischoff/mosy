@@ -1,0 +1,14 @@
+{
+    "UDP": null,
+    "clientCfgPath": "./cfg.lua",
+    "debug": true,
+    "internalPort": 80,
+    "maxConnections": 10000,
+    "maxMessageLength": 65535,
+    "modePaths": [
+        "./node_modules/nonhub/modes/",
+        "./modes/"
+    ],
+    "serverHandshake": "HTTP/1.1 101 Switching Protocols\r\nConnection: Upgrade\r\n",
+    "version": "1.0.0"
+}

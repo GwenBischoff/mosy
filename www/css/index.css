@@ -15,17 +15,38 @@ FONT
     font-style: normal;
     font-weight: 400;
 }
+/*********************************
+BODY
+**********************************/
 body{
     margin: 0;
     font-family: 'Pt Sans', sans-serif;
-    color: #7eb2c9;
-    font-size: 1.5em
+    color: #454545;
+    font-size: 12pt;
 }
 a{
-	color: #7eb2c9;
+    color: #454545;
+    text-decoration: none;
 }
-body a:hover, .offcanvas a:focus{
-    color: #1c7aa3;
+a:hover{
+    color: #989898;
+}
+/**************************
+HEADER
+**************************/
+header{
+    border-top: 10px solid #454545;
+}
+/**************************
+FOOTER
+**************************/
+footer {
+    font-size: 0.75em;
+    color: #ccc;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
 }
 /*********************************
 SIDENAV
@@ -41,17 +62,22 @@ SIDENAV
     overflow-x: hidden; 
     padding-top: 5.5em; 
     transition: 0.5s;
+    border-top: 10px solid #454545;
 }
 .sideNav a {
     padding: 0.6em 0.6em 0.6em 2em;
-    text-decoration: none;
     font-size: 1.5em;
     display: block;
     transition: 0.3s
 }
 .sideNavIcon{
     width: 5%;
-    padding: 1.2em 0em 0em 0.7em;
+    padding: 0.3em 0 0 0.7em;
+    font-size: 2em;
+    color: #454545;
+}
+.sideNavIcon:hover{
+    color: #989898;
 }
 .closeBtn {
     position: absolute;
@@ -60,57 +86,49 @@ SIDENAV
     font-size: 2em !important;
     margin-left: 4.5em;
 }
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
 /*********************************
 LOGO
 **********************************/
 .logo{
 	width: 100%;
     height: auto;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1em auto 2em auto;
 }
 /*********************************
 MAIN
 **********************************/
 #mainMenu{
-	margin: 0 1em 0 1em;
+	margin: 1em 1em 0 1em;
 	overflow: auto;
 	display:block;
-}
-#mainMenu a{
-	text-decoration: none;
+	font-size: 1.5em
 }
 .mainMenuDiv{
 	padding: 0.5em 0 0.5em 0.5em;
 	height: 40%;
-	width: 46%;
+	width: 45.5%;
 	float: left;
 }
+.text{
+    text-align: center;
+    padding: 0.25em 0 0.25em 0;
+}
 #leftUp{
-	border-left: 1px solid #e1e1e1;
-	border-top: 1px solid #e1e1e1;
-	border-right: 1px solid #e1e1e1;
+	border-left: 2px solid #e1e1e1;
+	border-top: 2px solid #e1e1e1;
+	border-right: 2px solid #e1e1e1;
 }
 #rightUp{
-	border-top: 1px solid #e1e1e1;
-	border-right: 1px solid #e1e1e1;
+	border-top: 2px solid #e1e1e1;
+	border-right: 2px solid #e1e1e1;
 }
 #leftLow{
-	border-left: 1px solid #e1e1e1;
-	border-top: 1px solid #e1e1e1;
-	border-bottom: 1px solid #e1e1e1;
+	border-left: 2px solid #e1e1e1;
+	border-top: 2px solid #e1e1e1;
+	border-bottom: 2px solid #e1e1e1;
 }
 #rightLow{
-	border: 1px solid #e1e1e1;
-}
-.mainMenu a:hover, .offcanvas a:focus{
-    color: #1c7aa3;
+	border: 2px solid #e1e1e1;
 }
 
 /*********************************
@@ -126,3 +144,43 @@ TEMPERATURE DISPLAY
 	text-align: center;
 }
 
+/*********************************
+LIGHT
+**********************************/
+.allSliders{
+    margin: 1em 1em 1em 1em;
+    padding: 1em 1em 1em 1em;
+}
+.sliders{
+    width:100%;
+    font-size: 1.5em;
+}
+.column{
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.sliderName{
+    width: 30%;
+    padding: 0.5em 0 0.5em 0;
+}
+.rangeAlign{
+    width: 40%;
+    padding: 0.5em 0 0.5em 0;
+    text-align: center;
+}
+.sliderValue{
+    width: 10%;
+    padding: 0.5em 0 0.5em 1em;
+}
+.range{
+    width: 100%;
+}
+/*********************************
+CLOTHES
+**********************************/
+.chickenPic{
+    width: 100%;
+    height: auto;
+    margin: 0 1em 0 1em;
+}

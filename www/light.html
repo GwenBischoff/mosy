@@ -2,27 +2,62 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<title>WetterEi</title>
 </head>
 
 <body>
-    <!--SideNavigation-->
-    <div id="mySideNav" class="sideNav">
-        <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
-        <a href="index.html">Main</a>
-        <a href="inside.html">Innen</a>
-        <a href="outside.html">Au&szlig;en</a>
-        <a href="clothes.html">Kleidung</a>
-    </div>
+    <header>
+        <!--SideNavigation-->
+        <div id="mySideNav" class="sideNav">
+            <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Main</a>
+            <a href="inside.html">Innen</a>
+            <a href="outside.html">Au&szlig;en</a>
+            <a href="clothes.html">Kleidung</a>
+        </div>
 
-    <!--SideNavigation-Icon-->
-    <div class="sideNavIcon" onclick="openNav()">menu</div>
+        <!--SideNavigation-Icon-->
+        <div class="sideNavIcon" onclick="openNav()"><i class="fa fa-bars"></i></div>
 
-    <!--Logo-->
-    <img src="img/WetterEi.png" alt="WetterEi" class="logo">
-    
-    <!-- Script to open nav-->
-    <script type="text/javascript" src="js/nav.js"></script>
+        <!--Logo-->
+        <img src="img/WetterEi.png" alt="WetterEi" class="logo">
+        
+        <!-- Script to open nav-->
+        <script type="text/javascript" src="js/nav.js"></script>
+    </header>
+    <section>
+        <div class="allSliders">
+            <div class="sliders">
+                <div class="column sliderName">Rot</div>
+                <div class="column rangeAlign">
+                    <input type="range" min="0" max="255" value="0" id="rangeRed" class="range" onchange="showValueRed(this.value)">
+                </div>
+                <div id="textRangeRed" class="column sliderValue">0</div>
+            </div>
+
+            <div class="sliders">
+                <div class="column sliderName">Gr&uuml;n</div>
+                <div class="column rangeAlign">
+                    <input type="range" min="0" max="255" value="0" id="rangeGreen" class="range" onchange="showValueGreen(this.value)"> 
+                </div>
+                <div id="textRangeGreen" class="column sliderValue">0</div> 
+            </div>
+
+            <div class="sliders">
+                <div class="column sliderName">Blau</div>
+                <div class="column rangeAlign">
+                    <input type="range" min="0" max="255" value="0" id="rangeBlue" class="range" onchange="showValueBlue(this.value)">
+                </div>
+                <div id="textRangeBlue" class="column sliderValue">0</div>
+            </div>
+            <!-- Script for range changes -->
+            <script type="text/javascript" src="js/slider.js"></script>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2016 Ein Projekt f&uuml;r Mosy/ITS</p>
+    </footer>
 </body>
 
 </html>
