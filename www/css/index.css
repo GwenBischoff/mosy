@@ -35,46 +35,50 @@ a:hover{
 HEADER
 **************************/
 header{
-    border-top: 10px solid #454545;
+    
 }
 /**************************
 FOOTER
 **************************/
 footer {
     font-size: 0.75em;
-    color: #ccc;
+    color: #e1e1e1;
     position: fixed;
     text-align: center;
     bottom: 0;
     width: 100%;
+    background-color: #454545;
 }
 /*********************************
 SIDENAV
 **********************************/
 .sideNav {
+    padding-top: 5.5em;
     height: 100%;
     width: 0; 
     position: fixed;
     z-index: 1; 
     top: 0;
     left: 0;
-    background-color: #fff; 
-    overflow-x: hidden; 
-    padding-top: 5.5em; 
+    background-color: #f0f0f0; 
+    overflow-x: hidden;  
     transition: 0.5s;
-    border-top: 10px solid #454545;
 }
 .sideNav a {
     padding: 0.6em 0.6em 0.6em 2em;
     font-size: 1.5em;
     display: block;
-    transition: 0.3s
+    transition: 0.3s;
 }
 .sideNavIcon{
     width: 5%;
-    padding: 0.3em 0 0 0.7em;
+    padding: 0.3em 0 0.3em 0.7em;
     font-size: 2em;
     color: #454545;
+}
+#navDiv{
+    border-bottom: 5px solid #454545;
+    background-color: #e1e1e1;
 }
 .sideNavIcon:hover{
     color: #989898;
@@ -90,9 +94,15 @@ SIDENAV
 LOGO
 **********************************/
 .logo{
+    margin: 1em auto 2em auto;
 	width: 100%;
     height: auto;
-    margin: 1em auto 2em auto;
+}
+.logo2{
+    margin: 0.5em auto 1em auto;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
 }
 /*********************************
 MAIN
@@ -104,7 +114,7 @@ MAIN
 	font-size: 1.5em
 }
 .mainMenuDiv{
-	padding: 0.5em 0 0.5em 0.5em;
+	padding: 0.5em 0.5 0.5em 0.5em;
 	height: 40%;
 	width: 45.5%;
 	float: left;
