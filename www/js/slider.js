@@ -24,9 +24,9 @@ function showValueBlue(newValue)
 }
 
 function changeColor(){
-	document.querySelector("#navDiv").style.borderColor = "rgb("+red+","+green+","+blue+")";
-	document.querySelector(".sideNav").style.borderColor = "rgb("+red+","+green+","+blue+")";
-	document.querySelector(".logo2").style.color = "rgb("+red+","+green+","+blue+")";
+	document.querySelector("#navIconWrapper").style.borderColor = "rgb("+red+","+green+","+blue+")";
+	document.querySelector("#sideNavIcon").style.borderColor = "rgb("+red+","+green+","+blue+")";
+	document.querySelector("#appName").style.color = "rgb("+red+","+green+","+blue+")";
 	document.querySelector("footer").style.backgroundColor = "rgb("+red+","+green+","+blue+")";
 }
 

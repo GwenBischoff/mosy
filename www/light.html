@@ -20,14 +20,29 @@
         </div>
 
         <!--SideNavigation-Icon-->
-        <div id="navDiv">
-            <div class="sideNavIcon" onclick="openNav()"><i class="fa fa-bars"></i></div>
+        <div id="navIconWrapper">
+            <div id="sideNavIcon" onclick="openNav()"><i class="fa fa-bars"></i></div>
+            <!--Logo-->
+            <div id="appName">WetterEi</div>
         </div>
 
-        <!--Logo-->
-        <div class="logo2">WetterEi</div>
     </header>
     <section>
+        <!--Toggle-->
+        <div id="wrapperToggle">
+            <div class="toggle">
+                <div>OFF</div>
+                <div><button></button></div>
+                <span>ON</span>
+            </div>
+            </br>
+            <div class="toggle">
+                <div>OFF</div>
+                <div><button></button></div>
+                <div>ON</div>
+            </div>
+        </div>
+
         <div class="allSliders">
             <div class="sliders">
                 <div class="column sliderName">Rot</div>
@@ -64,4 +79,6 @@
     <script type="text/javascript" src="js/slider.js"></script>
     <!-- Script to change color-->
     <script type="text/javascript" src="js/color.js"></script>
+    <!-- Script to use toggle-->
+    <script type="text/javascript" src="js/toggle.js"></script>
 </html>
