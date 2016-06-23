@@ -8,6 +8,8 @@ var tempOut = 25;
 var tempIn = 18;
 var humidityIn = 70;
 var pressureIn = 20;
+var on = true; /*Gibt an ob LEDs an sein sollen*/
+var changeColorFromApp = true; /*Gibt an ob LEDs von der App gesteuert werden sollen*/
 
 // Initialisierung des Express Servers
 var express = require("express");
@@ -22,14 +24,19 @@ server.listen(PORT);
 var socketio = require("socket.io");
 var io = socketio.listen(server);
 
+/*Verbindungen herstellen*/
 io.sockets.on('connection', function (socket) {
-	/*Empangen der Daten von der App*/
+	/*Empfangen der Daten von der App*/
 	socket.on('FromApp', function(data){
-		console.log(JSON.parse(data));
-		/*Für erster Wert des Arrays
-		console.log(JSON.parse(data)[0]);
-		*/
+		console.log('FromApp' + JSON.parse(data));
 	});
 	/*Senden der Daten an die App*/
 	socket.emit('ToApp', JSON.stringify([colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]));
+	
+	/*Empfangen der Daten vom Ei als Array in der Form [colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]*/
+	socket.on('FromEi', function(data){
+		console.log('FromEi ' + JSON.parse(data));
+	});
+	/*Senden der Daten an die App*/
+	socket.emit('ToEi', JSON.stringify([colorRed, colorGreen, colorBlue, on, changeColorFromApp]));
 });
