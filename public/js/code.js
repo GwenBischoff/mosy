@@ -4,11 +4,11 @@ var blue;
 
 var socket = io.connect();
 
-socket.on('Colors', function (data) {
+socket.on('ColorsFromServerToApp', function (data) {
     console.log(data);
 });
 
-socket.emit("Colors", function(){
+socket.emit('ColorsFromAppToServer', function(){
     red = document.getElementById("rangeRed").value;
     green = document.getElementById("rangeGreen").value;
     blue = document.getElementById("rangeBlue").value;
