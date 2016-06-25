@@ -28,22 +28,26 @@ var io = socketio.listen(server);
 io.sockets.on('connection', function (socket) {
 	/*Empfangen der Daten von der App*/
 	socket.on('FromApp', function(data){
-		console.log('FromApp' + JSON.parse(data));
+		colorRed = JSON.parse(data)[0];
+		colorGreen = JSON.parse(data)[1];   
+		colorBlue = JSON.parse(data)[2];
+		console.log("From App: red " + colorRed + " green " + colorGreen + " blue " + colorBlue);
 	});
 	/*Senden der Daten an die App*/
 	socket.emit('ToApp', JSON.stringify([colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]));
 	
 	/*Empfangen der Daten vom Ei als Array in der Form [colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]*/
-	socket.on('FromEi', function(data){
-		console.log('FromEi ' + JSON.parse(data));
-		colorRed = JSON.parse(data)[0];
-		colorGreen = JSON.parse(data)[1];
-		colorBlue = JSON.parse(data)[2];
-		tempOut = JSON.parse(data)[3];
-		tempIn = JSON.parse(data)[4];
-		humidityIn = JSON.parse(data)[5];
-		pressureIn = JSON.parse(data)[6];
+	socket.on('FromEi', function (data) {
+	    console.log(JSON.stringify(data))
+		//console.log('FromEi ' + JSON.parse(data));
+		colorRed = data.red;
+		colorGreen = data.green;
+		colorBlue = data.blue;
+		tempOut = data.tempExt;
+		tempIn = data.tempInt;
+		humidityIn = data.hum;
+		pressureIn = data.press;
 	});
 	/*Senden der Daten an die App*/
-	socket.emit('ToEi', JSON.stringify([colorRed, colorGreen, colorBlue, on, changeColorFromApp]));
+	socket.emit('ToEi', { red: colorRed, green: colorGreen, blue: colorBlue, light:on, manual:changeColorFromApp });
 });
