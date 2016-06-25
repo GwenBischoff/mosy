@@ -25,10 +25,17 @@ module.exports ={
 			
 			/*Empfangen der Daten von der App*/
 			socket.on('FromApp', function(data){
-				console.log('FromApp' + JSON.parse(data));
+				colorRed = JSON.parse(data)[0];
+				colorGreen = JSON.parse(data)[1];   
+				colorBlue = JSON.parse(data)[2];
+				on = JSON.parse(data)[3];
+				changeColorFromApp = JSON.parse(data)[4];
+
+				/*Senden der Daten an die App*/
+				socket.broadcast.emit('ToEi', { red: colorRed, green: colorGreen, blue: colorBlue, light:on, manual:changeColorFromApp });
+				console.log("From App: red " + colorRed + " green " + colorGreen + " blue " + colorBlue + " on " + on + " changeColorFromApp " + changeColorFromApp);
+				
 			});
-			/*Senden der Daten an die App*/
-			socket.emit('ToApp', JSON.stringify([colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]));
 			
 			/*Empfangen der Daten vom Ei als Array in der Form [colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]*/
 			socket.on('FromEi', function (data) {
@@ -41,9 +48,10 @@ module.exports ={
 				tempIn = data.tempInt;
 				humidityIn = data.hum;
 				pressureIn = data.press;
+
+				/*Senden der Daten an die App*/
+				socket.broadcast.emit('ToApp', JSON.stringify([colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]));
 			});
-			/*Senden der Daten an die App*/
-			socket.emit('ToEi', { red: colorRed, green: colorGreen, blue: colorBlue, light:on, manual:changeColorFromApp });
 		});
 	}
 }

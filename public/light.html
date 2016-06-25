@@ -32,24 +32,26 @@
     <section>
         <!--Toggle-->
         <div id="wrapperToggle">
-            <div class="toggle">
-                <div>OFF</div>
+            <div class="beschreibungToggle">Licht vom WetterEi</div>
+            <div class="toggleAus">AUS</div>
+            <div class="toggle" id="toggleLightOn">
                 <div><button></button></div>
-                <span>ON</span>
             </div>
+            <div class="toggleEin">EIN</div>
             </br>
-            <div class="toggle">
-                <div>OFF</div>
+            <div class="beschreibungToggle">Licht vom Web steuern</div></br>
+            <div class="toggleAus">AUS</div>
+            <div class="toggle" id="toggleColorFromApp">
                 <div><button></button></div>
-                <div>ON</div>
             </div>
+            <div class="toggleEin">EIN</div>
         </div>
 
         <div class="allSliders">
             <div class="sliders">
                 <div class="column sliderName">Rot</div>
                 <div class="column rangeAlign">
-                    <input type="range" min="0" max="255" value="0" id="rangeRed" class="range" oninput="showValueRed(this.value)">
+                    <input type="range" min="0" max="255" value="0" id="rangeRed" class="range">
                 </div>
                 <div id="textRangeRed" class="column sliderValue">0</div>
             </div>
@@ -57,7 +59,7 @@
             <div class="sliders">
                 <div class="column sliderName">Gr&uuml;n</div>
                 <div class="column rangeAlign">
-                    <input type="range" min="0" max="255" value="0" id="rangeGreen" class="range" oninput="showValueGreen(this.value)"> 
+                    <input type="range" min="0" max="255" value="0" id="rangeGreen" class="range"> 
                 </div>
                 <div id="textRangeGreen" class="column sliderValue">0</div> 
             </div>
@@ -65,7 +67,7 @@
             <div class="sliders">
                 <div class="column sliderName">Blau</div>
                 <div class="column rangeAlign">
-                    <input type="range" min="0" max="255" value="0" id="rangeBlue" class="range" oninput="showValueBlue(this.value)">
+                    <input type="range" min="0" max="255" value="0" id="rangeBlue" class="range">
                 </div>
                 <div id="textRangeBlue" class="column sliderValue">0</div>
             </div>
