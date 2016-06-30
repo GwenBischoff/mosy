@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Unbenanntes Dokument</title>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script> 
+</head>
+
+<body>
+<table width="100%" border="1" style="background-color:#ffffff;">
+  <tbody>
+    <tr>
+      <td>TempExt</td>
+      <td><input type="number" id="tempExt" value="22.7"></td>
+    </tr>
+    <tr>
+      <td>TempInt</td>
+      <td><input type="number" id="tempInt" value="19.2"></td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td><input type="number" id="hum" value="76.5"></td>
+    </tr>
+    <tr>
+      <td>Pressure</td>
+      <td><input type="number" id="press" value="1013.8"></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+var light_on = true;
+var light_manual = false;
+var light_manual_color = {r:0.0, g:0.0, b:0.0};
+var socket = io("http://127.0.0.1:3001");
+socket.on("ToEi", function(data){
+	/*
+	root["red"] = light_color.r;
+     root["green"] = light_color.g;
+     root["blue"] = light_color.b;
+     root["tempExt"] = tempExt;
+     root["tempInt"] = tempInt;
+     root["hum"] = tempHum;
+     root["press"] = tempPress;
+	 */
+	 console.log(data);
+	 if(data.light){
+        
+        light_on = true;
+      }else{
+        light_on = false;
+      }
+      
+      light_manual = data.manual;
+      light_manual_color = {r:data.red,g:data.green,b:data.blue};	 
+});
+var count = 0;
+setInterval(function(){
+	count++;
+	//calculate
+	var temp = $('#tempExt').val();
+  var out = {r:0.0,g:0.0,b:0.0};
+  var done = false;
+  // Create Table Array
+  lut= [
+        {temp:0,r:99,g:31,b:120},
+        {temp:7,r:4,g:63,b:152},
+        {temp:14,r:65,g:155,b:83},
+        {temp:21,r:253,g:236,b:61},
+        {temp:28,r:253,g:126,b:7},
+        {temp:35,r:249,g:23,b:50}
+     ];
+     numLut = 6;
+     //CLAMP
+ if(temp <= lut[0].temp){
+  out = lut[0];
+  done = true;
+ }
+ if(temp >= lut[ numLut-1].temp){
+  out = lut[numLut-1];
+  done = true;
+ }
+ // Linear LUT!!!
+ if(!done){
+    var i = 1;
+    while(temp>lut[i].temp){
+      i++;
+    }
+    var c1 = lut[i];
+    var c2 = lut[i-1];
+    var delta = lut[i].temp-lut[i-1].temp;
+    
+     var mix2 = (lut[i].temp - temp)/delta;
+    var mix1 = 1-mix2;
+
+    out.r = mix1 *c1.r + mix2 * c2.r;
+    out.g = mix1 *c1.g + mix2 * c2.g;
+    out.b = mix1 *c1.b + mix2 * c2.b;
+  
+ }
+  
+  if(light_on){
+	  if(light_manual){
+		  $('body').css('background-color', 'rgba('+parseInt(light_manual_color.r)+','+parseInt(light_manual_color.g)+','+parseInt(light_manual_color.b)+',1)');
+	  }else{
+		$('body').css('background-color', 'rgba('+parseInt(out.r)+','+parseInt(out.g)+','+parseInt(out.b)+',1)');
+	  }
+  }else{
+	  $('body').css('background-color', 'rgba(0,0,0,1)');
+  }
+	
+	if(count ==9){
+		count = 0;
+		//send
+		socket.emit("FromEi",{   red:out.r, green:out.g, blue:out.b, tempExt:temp, tempInt:$('#tempInt').val(), hum:$('#hum').val(), press:$('#press').val() });
+     
+		
+	}
+},100);
+</script>
+</body>
+</html>

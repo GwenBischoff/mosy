@@ -11,6 +11,15 @@ var pressureIn = 20;
 var on = true; /*Gibt an ob LEDs an sein sollen*/
 var changeColorFromApp = true; /*Gibt an ob LEDs von der App gesteuert werden sollen*/
 
+// Initialisierung des Express Servers
+var express = require("express");
+var app = express();
+
+var http = require("http");
+var server = http.createServer(app);
+app.use(express.static(__dirname + "/public"));
+server.listen(PORT);
+
 var limiter = {};
 limiter.running = false;
 limiter.execute = function(fn){
@@ -28,17 +37,12 @@ limiter.execute = function(fn){
 				fn = null;
 			}
 		},250);
-	}		
+	}
+		
 };
+limiter.fn = null;
 
-// Initialisierung des Express Servers
-var express = require("express");
-var app = express();
 
-var http = require("http");
-var server = http.createServer(app);
-app.use(express.static(__dirname + "/public"));
-server.listen(PORT);
 
 //Initialisieren Websockets
 var socketio = require("socket.io");
@@ -46,7 +50,6 @@ var io = socketio.listen(server);
 
 /*Verbindungen herstellen*/
 io.sockets.on('connection', function (socket) {
-
 	/*Empfangen der Daten von der App*/
 	socket.on('FromApp', function(data){
 		colorRed = JSON.parse(data)[0];
@@ -58,7 +61,10 @@ io.sockets.on('connection', function (socket) {
 		/*Senden der Daten an die App*/
 		limiter.execute(function(e){
 			socket.broadcast.emit('ToEi', { red:colorRed, green:colorGreen, blue:colorBlue, light:on, manual:changeColorFromApp });
+			console.log("Sending To Ei");
 		});
+		console.log("From App: red " + colorRed + " green " + colorGreen + " blue " + colorBlue + " on " + on + " changeColorFromApp " + changeColorFromApp);
+		
 	});
 	
 	/*Empfangen der Daten vom Ei als Array in der Form [colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]*/

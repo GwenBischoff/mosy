@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="/socket.io/socket.io.js"></script>
+	<title>WetterEi</title>
+</head>
+
+<body>
+    <header>
+        <!--SideNavigation-->
+        <div id="mySideNav" class="sideNav">
+            <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Hauptseite</a>
+            <a href="inside.html">Innen</a>
+            <a href="outside.html">Au&szlig;en</a>
+            <a href="clothes.html">Kleidung</a>
+            <a href="light.html">Licht</a>
+        </div>
+
+        <!--SideNavigation-Icon-->
+        <div id="navIconWrapper">
+            <div id="sideNavIcon" onclick="openNav()"><i class="fa fa-bars"></i></div>
+            <!--Logo-->
+            <div id="appName">WetterEi</div>
+        </div>
+       
+    </header>
+    <section>
+    </section>
+    <footer>
+        <p>&copy; 2016 Ein Projekt f&uuml;r Mosy/ITS</p>
+    </footer>
+    <!-- Script to open nav-->
+        <script type="text/javascript" src="js/nav.js"></script>
+    <!-- Script to change color-->
+    <script type="text/javascript" src="js/changeColor.js"></script>
+</body>
+
+</html>

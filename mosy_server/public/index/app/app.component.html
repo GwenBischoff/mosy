@@ -1,0 +1,21 @@
+
+<header>
+  <img src="app/res/haw.gif"/>
+  Jahresausstellung IOT
+</header>  
+
+<div class="container">
+
+<div class="gallery-item" *ngFor="#module of modules" (click)="moduleClicked(module.link)">
+<p class="title"><b>{{module.name}}</b><br></p>
+<p *ngFor="#author of module.authors" class="author"> {{author}} </p>
+<p class="information">{{module.info}}</p>
+</div>
+
+
+    <script src='app/jquery.min.js'></script>
+
+
+
+
+</div>

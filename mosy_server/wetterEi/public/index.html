@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="/socket.io/socket.io.js"></script>
+	<title>WetterEi</title>
+</head>
+
+<body>
+    <header>
+        <!--SideNavigation-->
+        <div id="mySideNav" class="sideNav">
+            <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Hauptseite</a>
+            <a href="inside.html">Innen</a>
+            <a href="outside.html">Au&szlig;en</a>
+            <a href="clothes.html">Kleidung</a>
+            <a href="light.html">Licht</a>
+        </div>
+
+        <!--SideNavigation-Icon-->
+        <div id="navIconWrapper">
+            <div id="sideNavIcon" onclick="openNav()"><i class="fa fa-bars"></i></div>
+            <!--Logo-->
+            <div id="appName">WetterEi</div>
+        </div>
+    </header>
+    <section>
+        <!-- Content -->
+        <div id="mainMenu">
+            <a href="inside.html" class="menu_a">
+            	<div class="mainMenuDiv" id="leftUp">
+            		<div class="text">Temperatur <i class="fa fa-home"></i></div>
+                    <div class="text"><span id="spanTempIn">-</span> &deg;C</div>
+    	    	</div>
+    	    </a>
+    	    <a href="outside.html" class="menu_a">
+    	        <div class="mainMenuDiv" id="rightUp">
+    	        	<div class="text">Temperatur <i class="fa fa-tree" aria-hidden="true"></i></div>
+                    <div class="text"><span id="spanTempOut">-</span> &deg;C</div>
+    	    	</div>
+    	    </a>
+    	    <a href="" class="menu_a">
+    	        <div class="mainMenuDiv" id="leftLow">
+    	        	<div class="text">Feuchtigkeit <i class="fa fa-home"></i></div>
+                    <div class="text"><span id="spanHumidity">-</span> %</div>
+    	    	</div>
+    	    </a>
+    	    <a href="" class="menu_a">
+    	        <div class="mainMenuDiv" id="rightLow">
+    	        	<div class="text">Luftdruck <i class="fa fa-home"></i></div>
+                    <div class="text"><span id="spanPressure">-</span> Pa</div>
+        		</div>
+        	</a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2016 Ein Projekt f&uuml;r Mosy/ITS</p>
+    </footer>
+    <!-- Script to open nav-->
+    <script type="text/javascript" src="js/nav.js"></script>
+    <!-- Script to change color-->
+    <script type="text/javascript" src="js/changeColor.js"></script>
+    <!-- Script to set values of temperature, humidity, pressure-->
+    <script type="text/javascript" src="js/setValues.js"></script>
+</body>
+</html>
