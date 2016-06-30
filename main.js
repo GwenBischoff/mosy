@@ -34,7 +34,7 @@ module.exports ={
 		};
 
 	limiter.fn = null;
-		app.use("/wetterEi", express.static(__dirname+'/../public/public'))
+		app.use("/wetterEi", express.static(__dirname+'/../public'))
 		
 		
 		var wetternsp = socket.of("/wetterEi/client");
