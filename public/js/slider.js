@@ -26,7 +26,7 @@ $(document).ready(function(){
             $('#rangeBlue').val(blue);
             $('#textRangeBlue').html(blue);
             /*Farbe im Header/Footer ändern*/
-            changeColor();
+            changeColor(red, green, blue);
         }
     }); 
 
@@ -70,7 +70,7 @@ $(document).ready(function(){
         if(changeColorFromApp){
             red = this.value;
             $('#textRangeRed').html(red);
-            changeColor();
+            changeColor(red, green, blue);
             sendDataToServer();
         }
     });
@@ -80,7 +80,7 @@ $(document).ready(function(){
         if(changeColorFromApp){
             green = this.value;
             $('#textRangeGreen').html(green);
-            changeColor();
+            changeColor(red, green, blue);
             sendDataToServer(); 
         }     
     });
@@ -90,18 +90,10 @@ $(document).ready(function(){
         if(changeColorFromApp){
             blue = this.value;
             $('#textRangeBlue').html(blue);  
-            changeColor();
+            changeColor(red, green, blue);
             sendDataToServer();
         }
     });
-
-    /*Farbe im Header/Footer ändern*/
-    function changeColor(){    
-        $("#navIconWrapper").css('border-color', "rgb("+red+","+green+","+blue+")");
-        $("#navIconWrapper").css('border-color', "rgb("+red+","+green+","+blue+")");
-        document.querySelector("#appName").style.color = "rgb("+red+","+green+","+blue+")";
-        document.querySelector("footer").style.backgroundColor = "rgb("+red+","+green+","+blue+")";      
-    }
 
     /*Farbwerte und Booleans für Licht an/aus und Fareben aus der App steuern an/aus an Server senden*/
     function sendDataToServer(){

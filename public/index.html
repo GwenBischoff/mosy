@@ -2,8 +2,13 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+    <!-- Script to change color-->
+    <script type="text/javascript" src="js/changeColor.js"></script>
+    <!-- Script to set values of temperature, humidity, pressure-->
+    <script type="text/javascript" src="js/setValues.js"></script>
 	<title>WetterEi</title>
 </head>
 
@@ -12,18 +17,16 @@
         <!--SideNavigation-->
         <div id="mySideNav" class="sideNav">
             <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
-            <a href="index.html">Hauptseite</a>
-            <a href="inside.html">Innen</a>
-            <a href="outside.html">Au&szlig;en</a>
+            <a href="index.html">Wetterdaten</a>
             <a href="clothes.html">Kleidung</a>
             <a href="light.html">Licht</a>
         </div>
 
         <!--SideNavigation-Icon-->
-        <div id="navIconWrapper">
-            <div id="sideNavIcon" onclick="openNav()"><i class="fa fa-bars"></i></div>
+        <div class="navIconWrapper">
+            <div class="sideNavIcon" onclick="openNav()"><img src="img/menu_icon.png" alt="Menu"></div>
             <!--Logo-->
-            <div id="appName">WetterEi</div>
+            <div class="appName">WetterEi</div>
         </div>
     </header>
     <section>
@@ -50,7 +53,7 @@
     	    <a href="" class="menu_a">
     	        <div class="mainMenuDiv" id="rightLow">
     	        	<div class="text">Luftdruck <i class="fa fa-home"></i></div>
-                    <div class="text"><span id="spanPressure">-</span> Pa</div>
+                    <div class="text"><span id="spanPressure">-</span> hPa</div>
         		</div>
         	</a>
         </div>
@@ -60,9 +63,5 @@
     </footer>
     <!-- Script to open nav-->
     <script type="text/javascript" src="js/nav.js"></script>
-    <!-- Script to change color-->
-    <script type="text/javascript" src="js/changeColor.js"></script>
-    <!-- Script to set values of temperature, humidity, pressure-->
-    <script type="text/javascript" src="js/setValues.js"></script>
 </body>
 </html>

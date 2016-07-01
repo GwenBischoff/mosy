@@ -37,22 +37,19 @@ HEADER
 header{
     
 }
-#sideNavIcon{
+.sideNavIcon{
     float: left;
     width: 0;
     color: #454545;
 }
-#navIconWrapper{
+.navIconWrapper{
     font-size: 2em;
     padding: 1em 1em 1em 0.7em; 
     text-align: center;
     border-bottom: 5px solid #454545;
     background-color: #e1e1e1;
 }
-#sideNavIcon:hover{
-    color: #989898;
-}
-#appName{
+.appName{
     font-size: 1.5em;
     display: inline-block;
     margin: 0 auto;
@@ -98,25 +95,12 @@ SIDENAV
     font-size: 2em !important;
     margin-left: 4.5em;
 }
-/*********************************
-LOGO
-**********************************/
-.logo{
-    margin: 1em auto 2em auto;
-	width: 100%;
-    height: auto;
-}
-.logo2{
-    margin: 0.5em auto 1em auto;
-    text-align: center;
-    font-size: 3em;
-    font-weight: bold;
-}
+
 /*********************************
 MAIN
 **********************************/
 #mainMenu{
-	margin: 2em 1em 0 1em;
+	margin: 3em 0 0 7%;
 	overflow: auto;
 	display:block;
 	font-size: 1.5em
