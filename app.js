@@ -37,8 +37,7 @@ limiter.execute = function(fn){
 				fn = null;
 			}
 		},250);
-	}
-		
+	}		
 };
 limiter.fn = null;
 

@@ -97,7 +97,7 @@ SIDENAV
 MAIN
 **********************************/
 #mainMenu{
-	margin: 3em 0 0 7%;
+	margin: 10% 0 0 7%;
 	overflow: auto;
 	display:block;
 	font-size: 1.5em
@@ -140,7 +140,7 @@ UEBER UNS
 CLOTHES
 **********************************/
 .birdDiv{
-    margin-top: 3em;
+    margin-top: 10%;
     text-align: center;
 }
 #bird{
@@ -163,10 +163,38 @@ TEMPERATURE DISPLAY
 /*********************************
 LIGHT
 **********************************/
-#wrapperToggle{
+.toggleWrapper{
+    padding: 2em 0 2em 0;
+}
+.toggleDiv{
+    width: 100%;
+    float: left;
+    padding-bottom: 1em;
+}
+.beschreibungToggleSize{
+    width: 33%;
+    padding: 0.5em 0 0 0; 
+    float: left;
     text-align: center;
 }
-.toggle { 
+.beschreibungToggle{
+    padding: 0 1em 0 1em;
+}
+.toggleAus{
+    float: left;
+    padding-top: 0.3em;
+}
+.toggleDivInner{
+    width: 33%;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+}
+.toggleEin{
+    float: right;
+    padding-top: 0.3em;
+}
+.toggle{ 
     background-color: white; 
     margin: 5px 0; 
     border-radius: 20px; 
@@ -216,6 +244,7 @@ LIGHT
 .sliders{
     width:100%;
     font-size: 1.5em;
+    float: left;
 }
 .column{
     float: left;
@@ -227,12 +256,12 @@ LIGHT
     padding: 0.5em 0 0.5em 0;
 }
 .rangeAlign{
-    width: 40%;
+    width: 35%;
     padding: 0.5em 0 0.5em 0;
     text-align: center;
 }
 .sliderValue{
-    width: 10%;
+    width: 29%;
     padding: 0.5em 0 0.5em 1em;
 }
 .range{
