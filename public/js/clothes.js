@@ -59,4 +59,5 @@ $(document).on("ready", function(e) {
             $('#bird').attr('src', 'img/sommer.gif');
         }
     }
+    setHeight();
 });
