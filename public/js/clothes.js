@@ -16,12 +16,19 @@ $(document).on("ready", function(e) {
 
         changeColor(red, green, blue);
         changeBird(tempOut);
+        
+    });
+
+    $( window ).resize(function() {
+        setHeight();
     });
 
     function setHeight(){
         width = $( window ).width();
-        widthImg = Math.round(width/2);
-        console.log(widthImg);
+        widthImg = Math.round(width*0.7);
+        if(widthImg > 400){
+            widthImg = 400;
+        }
         $('#bird').width(widthImg);
     }
 
@@ -52,6 +59,4 @@ $(document).on("ready", function(e) {
             $('#bird').attr('src', 'img/sommer.gif');
         }
     }
-//30° Baden, 25 kurze Hose, 20 lange Hose 15 lange hose pull
-    setHeight();
 });
