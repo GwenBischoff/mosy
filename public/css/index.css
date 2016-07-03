@@ -28,9 +28,6 @@ a{
     color: #454545;
     text-decoration: none;
 }
-a:hover{
-    color: #989898;
-}
 /**************************
 HEADER
 **************************/
@@ -132,7 +129,26 @@ MAIN
 #rightLow{
 	border: 2px solid #e1e1e1;
 }
-
+/*********************************
+UEBER UNS
+**********************************/
+#textUeberUns{
+    font-size: 1.2em;
+    padding: 1.5em 3em 0em 1.5em;
+}
+/*********************************
+CLOTHES
+**********************************/
+.birdDiv{
+    width: 100%;
+    height: auto;
+    margin-top: 10%;
+    text-align: center;
+}
+#bird{
+    width: 50%;
+    height: auto;
+}
 /*********************************
 TEMPERATURE DISPLAY
 **********************************/
@@ -223,12 +239,4 @@ LIGHT
 }
 .range{
     width: 100%;
-}
-/*********************************
-CLOTHES
-**********************************/
-.chickenPic{
-    width: 100%;
-    height: auto;
-    margin: 0 1em 0 1em;
 }

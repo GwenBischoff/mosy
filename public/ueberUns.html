@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
     <!-- Script to change color-->
     <script type="text/javascript" src="js/changeColor.js"></script>
-    <script type="text/javascript" src="js/clothes.js"></script>
+    <script type="text/javascript" src="js/ueberUns.js"></script>
 	<title>WetterEi</title>
 </head>
 
@@ -23,26 +24,23 @@
 
         <!--SideNavigation-Icon-->
         <div class="navIconWrapper">
-            <div class="sideNavIcon" onclick="openNav()"><img src="img/menu_icon.png" alt="Menu" id ="clothesNav"></i></div>
+            <div class="sideNavIcon" onclick="openNav()"><img src="img/menu_icon.png" alt="Menu"></div>
             <!--Logo-->
             <div class="appName">WetterEi</div>
         </div>
-
-        <!-- Script to open nav-->
-        <script type="text/javascript" src="js/nav.js"></script>
     </header>
     <section>
-        <!-- Chicken dressed with temperatures -->
-        <div class="birdDiv">
-	        <img src="img/langkurz.gif" alt="Head" id="bird">         
-    	</div>
-    <section>
+        <!-- Content -->
+        <div id="textUeberUns">
+            Wir sind Studenten des Departements DMI der HAW Hamburg. Genauer studieren wir Medientechnik und Media Systems. Diese Projekt war eine Gemeinschaftsarbeit der beiden Studiengänge im Rahmen der Studienfächer ITS und Mobile Systeme.
+            <br/>
+            Für das Projekt haben wir einen Minicomputer "HUZZAH Feather" verwendet welcher mit der Elektronik verbunden wurde. Für die Weboberfläche wurde eine Website entwickelt und ein eigener Server aufgesetzt. 
+        </div>
+    </section>
     <footer>
         <p>&copy; 2016 Ein Projekt f&uuml;r Mosy/ITS</p>
     </footer>
     <!-- Script to open nav-->
     <script type="text/javascript" src="js/nav.js"></script>
-    <!-- Script to change color-->
-    <script type="text/javascript" src="js/changeColor.js"></script>
 </body>
 </html>

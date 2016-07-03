@@ -10,12 +10,13 @@ $(document).ready(function(){
 
     socket.on('ToApp', function (data) {
         if(!changeColorFromApp){
-            console.log(data);
             /*RGB-Werte vom Server in Variablen speichern*/
             red = Math.round(JSON.parse(data)[0]);
             green = Math.round(JSON.parse(data)[1]);
             blue = Math.round(JSON.parse(data)[2]);
 
+            lightOn = JSON.parse(data)[7];
+            changeColorFromApp = JSON.parse(data)[8];
             /*RGB-Werte vom Server an Slider übergeben*/
             $('#rangeRed').val(red);
             $('#textRangeRed').html(red);
@@ -27,6 +28,21 @@ $(document).ready(function(){
             $('#textRangeBlue').html(blue);
             /*Farbe im Header/Footer ändern*/
             changeColor(red, green, blue);
+
+            //Toggle lightOn entsprechend des übergebenen Wertes setzen
+            if(lightOn){
+               $('#toggleLightOn').addClass('toggle-selected'); 
+            }
+            else if(!lightOn){
+               $('#toggleLightOn').removeClass('toggle-selected'); 
+            }
+            //Toggle changeColorFromApp entsprechend des übergebenen Wertes setzen
+            if(changeColorFromApp){
+               $('#toggleColorFromApp').addClass('toggle-selected'); 
+            }
+            else if(!changeColorFromApp){
+               $('#toggleColorFromApp').removeClass('toggle-selected'); 
+            }
         }
     }); 
 
@@ -34,10 +50,6 @@ $(document).ready(function(){
         $(this).toggleClass('toggle-selected');
         if(!lightOn){
             lightOn = true; 
-            //Enable ranges
-            /*$("#rangeRed").disabled = false;
-            $("#rangeGreen").disabled = false;
-            $("#rangeBlue").disabled = false;*/
         }
         else{
             lightOn = false;
@@ -45,24 +57,22 @@ $(document).ready(function(){
             if(changeColorFromApp){
                 $('#toggleColorFromApp').toggleClass('toggle-selected');
                 changeColorFromApp = false;
-                //Disable ranges
-                /*$("#rangeRed").disabled = true;
-                $("#rangeGreen").disabled = true;
-                $("#rangeBlue").disabled = true;*/
             }
         }
         sendDataToServer();
     });
 
     $(document).on('click', '#toggleColorFromApp', function() {
-        $(this).toggleClass('toggle-selected'); 
-        if(!changeColorFromApp){
-            changeColorFromApp = true; 
+        if(lightOn){
+            $(this).toggleClass('toggle-selected'); 
+            if(!changeColorFromApp){
+                changeColorFromApp = true; 
+            }
+            else{
+                changeColorFromApp = false;
+            }
+            sendDataToServer();
         }
-        else{
-            changeColorFromApp = false;
-        }
-        sendDataToServer();
     });
 
     //EventListener Slider für rote Farbwerte
@@ -94,8 +104,7 @@ $(document).ready(function(){
             sendDataToServer();
         }
     });
-
-    /*Farbwerte und Booleans für Licht an/aus und Fareben aus der App steuern an/aus an Server senden*/
+    /*Farbwerte und Booleans für Licht an/aus und Farben aus der App steuern an/aus an Server senden*/
     function sendDataToServer(){
         socket.emit("FromApp", JSON.stringify([red, green, blue, lightOn, changeColorFromApp]));
     }

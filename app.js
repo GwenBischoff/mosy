@@ -1,15 +1,15 @@
 
 var PORT = 3001;
 //Daten initialisieren und mit Dummy-Daten bestücken
-var colorRed = 0;
-var colorGreen = 142;
-var colorBlue = 255;
-var tempOut = 25;
-var tempIn = 18;
-var humidityIn = 70;
-var pressureIn = 20;
+var colorRed;
+var colorGreen;
+var colorBlue;
+var tempOut;
+var tempIn;
+var humidityIn;
+var pressureIn;
 var on = true; /*Gibt an ob LEDs an sein sollen*/
-var changeColorFromApp = true; /*Gibt an ob LEDs von der App gesteuert werden sollen*/
+var changeColorFromApp = false; /*Gibt an ob LEDs von der App gesteuert werden sollen*/
 
 // Initialisierung des Express Servers
 var express = require("express");
@@ -61,25 +61,24 @@ io.sockets.on('connection', function (socket) {
 		/*Senden der Daten an die App*/
 		limiter.execute(function(e){
 			socket.broadcast.emit('ToEi', { red:colorRed, green:colorGreen, blue:colorBlue, light:on, manual:changeColorFromApp });
-			console.log("Sending To Ei");
 		});
-		console.log("From App: red " + colorRed + " green " + colorGreen + " blue " + colorBlue + " on " + on + " changeColorFromApp " + changeColorFromApp);
-		
 	});
 	
 	/*Empfangen der Daten vom Ei als Array in der Form [colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]*/
 	socket.on('FromEi', function (data) {
-	    console.log(JSON.stringify(data))
+	    console.log("From Ei" + JSON.stringify(data))
 		//console.log('FromEi ' + JSON.parse(data));
-		colorRed = data.red;
-		colorGreen = data.green;
-		colorBlue = data.blue;
+		if(!changeColorFromApp){	
+			colorRed = data.red;
+			colorGreen = data.green;
+			colorBlue = data.blue;
+		}
 		tempOut = data.tempExt;
 		tempIn = data.tempInt;
 		humidityIn = data.hum;
 		pressureIn = data.press;
 
 		/*Senden der Daten an die App*/
-		socket.broadcast.emit('ToApp', JSON.stringify([colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn]));
+		socket.broadcast.emit('ToApp', JSON.stringify([colorRed, colorGreen, colorBlue, tempOut, tempIn, humidityIn, pressureIn, on, changeColorFromApp]));
 	});
 });

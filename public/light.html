@@ -2,9 +2,8 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
     <!-- Script to change color-->
     <script type="text/javascript" src="js/changeColor.js"></script>
     <!-- Script for range changes -->
@@ -20,6 +19,7 @@
             <a href="index.html">Wetterdaten</a>
             <a href="clothes.html">Kleidung</a>
             <a href="light.html">Licht</a>
+            <a href="ueberUns.html">&Uuml;ber uns</a>
         </div>
 
         <!--SideNavigation-Icon-->
@@ -35,7 +35,7 @@
         <div id="wrapperToggle">
             <div class="beschreibungToggle">Licht vom WetterEi</div>
             <div class="toggleAus">AUS</div>
-            <div class="toggle" id="toggleLightOn">
+            <div class="toggle toggle-selected" id="toggleLightOn">
                 <div><button></button></div>
             </div>
             <div class="toggleEin">EIN</div>
@@ -55,6 +55,7 @@
                     <input type="range" min="0" max="255" value="0" id="rangeRed" class="range">
                 </div>
                 <div id="textRangeRed" class="column sliderValue">0</div>
+                <!--<input id="textRangeRed" class="column sliderValue" type="number" min="0" max="255" size="3" step="1" value="0">-->
             </div>
 
             <div class="sliders">

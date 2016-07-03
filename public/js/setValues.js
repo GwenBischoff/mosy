@@ -19,7 +19,7 @@ $(document).on("ready", function(e) {
         tempIn = JSON.parse(data)[4];
         humidityIn = JSON.parse(data)[5];
         pressureIn = JSON.parse(data)[6];
-        changeTemp()
+        changeTemp();
     }); 
 
     /*Farbe im Header/Footer ändern*/
