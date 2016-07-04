@@ -17,32 +17,12 @@ $(document).ready(function(){
 
             lightOn = JSON.parse(data)[7];
             changeColorFromApp = JSON.parse(data)[8];
-            /*RGB-Werte vom Server an Slider übergeben*/
-            $('#rangeRed').val(red);
-            $('#textRed').val(red);
-
-            $('#rangeGreen').val(green);
-            $('#textRangeGreen').val(green);
-            
-            $('#rangeBlue').val(blue);
-            $('#textRangeBlue').val(blue);
+            /*Übergebene Werte für Slider setzen*/
+            setSliderRGB();
             /*Farbe im Header/Footer ändern*/
             changeColor(red, green, blue);
-
-            //Toggle lightOn entsprechend des übergebenen Wertes setzen
-            if(lightOn){
-               $('#toggleLightOn').addClass('toggle-selected'); 
-            }
-            else if(!lightOn){
-               $('#toggleLightOn').removeClass('toggle-selected'); 
-            }
-            //Toggle changeColorFromApp entsprechend des übergebenen Wertes setzen
-            if(changeColorFromApp){
-               $('#toggleColorFromApp').addClass('toggle-selected'); 
-            }
-            else if(!changeColorFromApp){
-               $('#toggleColorFromApp').removeClass('toggle-selected'); 
-            }
+            /*Übergebene Werte für Toggle setzen*/
+            setToggle();
         }
     }); 
 
@@ -93,7 +73,7 @@ $(document).ready(function(){
     $('#rangeGreen').on('input change', function() {
         if(changeColorFromApp){
             green = this.value;
-            $('#textRangeGreen').val(green);
+            $('#textGreen').val(green);
             changeColor(red, green, blue);
             sendDataToServer(); 
         }     
@@ -103,11 +83,66 @@ $(document).ready(function(){
     $('#rangeBlue').on('input change', function() {
         if(changeColorFromApp){
             blue = this.value;
-            $('#textRangeBlue').val(blue);  
+            $('#textBlue').val(blue);  
             changeColor(red, green, blue);
             sendDataToServer();
         }
     });
+
+    /*EventListener TextInput für rote Farbwerte*/
+    $("#textRed").bind('keyup change click', function () {
+        if(changeColorFromApp){
+            red = this.value;
+            $('#rangeRed').val(red);
+            changeColor(red, green, blue);
+            sendDataToServer();
+        }
+    });
+    /*EventListener TextInput für grün Farbwerte*/
+    $("#textGreen").bind('keyup change click', function () {
+        if(changeColorFromApp){
+            green = this.value;
+            $('#rangeGreen').val(green);
+            changeColor(red, green, blue);
+            sendDataToServer();
+        }
+    });
+    /*EventListener TextInput für blau Farbwerte*/
+    $("#textBlue").bind('keyup change click', function () {
+        if(changeColorFromApp){
+            blue = this.value;
+            $('#rangeBlue').val(blue);
+            changeColor(red, green, blue);
+            sendDataToServer();
+        }
+    });
+    function setSliderRGB(){
+        /*RGB-Werte vom Server an Slider übergeben*/
+        $('#rangeRed').val(red);
+        $('#textRed').val(red);
+
+        $('#rangeGreen').val(green);
+        $('#textGreen').val(green);
+        
+        $('#rangeBlue').val(blue);
+        $('#textBlue').val(blue);
+    }
+    function setToggle(){
+        //Toggle lightOn entsprechend des übergebenen Wertes setzen
+        if(lightOn){
+           $('#toggleLightOn').addClass('toggle-selected'); 
+        }
+        else if(!lightOn){
+           $('#toggleLightOn').removeClass('toggle-selected'); 
+        }
+        //Toggle changeColorFromApp entsprechend des übergebenen Wertes setzen
+        if(changeColorFromApp){
+           $('#toggleColorFromApp').addClass('toggle-selected'); 
+        }
+        else if(!changeColorFromApp){
+           $('#toggleColorFromApp').removeClass('toggle-selected'); 
+        }
+    }
 
     /*Farbwerte und Booleans für Licht an/aus und Farben aus der App steuern an/aus an Server senden*/
     function sendDataToServer(){

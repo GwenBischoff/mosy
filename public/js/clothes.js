@@ -3,8 +3,6 @@ $(document).on("ready", function(e) {
     var red = 0;
     var green = 142;
     var blue = 255;
-    var width;
-    var widthImg;
     var socket = io.connect();
 
     socket.on('ToApp', function (data) {
@@ -18,19 +16,6 @@ $(document).on("ready", function(e) {
         changeBird(tempOut);
         
     });
-
-    $( window ).resize(function() {
-        setHeight();
-    });
-
-    function setHeight(){
-        width = $( window ).width();
-        widthImg = Math.round(width*0.7);
-        if(widthImg > 400){
-            widthImg = 400;
-        }
-        $('#bird').width(widthImg);
-    }
 
     function changeBird(tempOut){
         $(this).tempOut = tempOut;
@@ -59,5 +44,4 @@ $(document).on("ready", function(e) {
             $('#bird').attr('src', 'img/sommer.gif');
         }
     }
-    setHeight();
 });
