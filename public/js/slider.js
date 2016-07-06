@@ -3,7 +3,7 @@ $(document).ready(function(){
     var red = 0;
     var green = 0;
     var blue = 0;
-    var lightOn = false;
+    var lightOn = true;
     var changeColorFromApp = false;
 
     var socket = io.connect();
@@ -96,8 +96,8 @@ $(document).ready(function(){
     });
     
     /*Ändert die Sliderwerte wenn im Input der Wert geändert wird
-    @param id ist die Id von der das Event ausging
-    @param valueInput ist der veränderte Farbwert*/
+     *@param id ist die Id von der das Event ausging
+     *@param valueInput ist der veränderte Farbwert*/
     function changeRangeInput(id, valueInput){
         var rangeId = id.replace('text', 'range');
         rangeId = '#' + rangeId; 
@@ -105,8 +105,8 @@ $(document).ready(function(){
     }
 
     /*Ändert die Textwerte wenn im Slider der Wert geändert wird
-    @param id ist die Id von der das Event ausging
-    @param valueInput ist der veränderte Farbwert*/
+     *@param id ist die Id von der das Event ausging
+     *@param valueInput ist der veränderte Farbwert*/
     function changeTextInput(id, valueInput){
         var textId = id.replace('range', 'text');
         textId = '#' + textId;
@@ -114,8 +114,8 @@ $(document).ready(function(){
     }
 
     /*Setzt die neuen Farbwerte und ruft Methoden zum ändern der Farbe und senden an den Server auf.
-    @param id ist die Id von der das Event ausging
-    @param valueInput ist der veränderte Farbwert*/
+     *@param id ist die Id von der das Event ausging
+     *@param valueInput ist der veränderte Farbwert*/
     function setRGB(id, valueInput){
         if(id == 'textRed' || id == 'rangeRed'){
             red = valueInput;

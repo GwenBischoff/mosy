@@ -24,47 +24,45 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
-    <!-- Script to change color-->
+    <!-- Script um die Farbe zu ändern-->
     <script type="text/javascript" src="js/changeColor.js"></script>
+    <!-- Script um das Bild des Hühnchen je nach Temperatur anzuzeigen-->
     <script type="text/javascript" src="js/clothes.js"></script>
-    <script type="text/javascript" src="js/setSizes.js"></script>
+    <!-- Script um die Größe des Bildes an verschiedene Displaygrößen anzupassen-->
     <script type="text/javascript" src="js/setSizeImg.js"></script>
+    <!--Script um die Seite bei verschiedenen Displaygrößen anzupassen-->
+    <script type="text/javascript" src="js/setSizes.js"></script>
+    <!-- Script um Seiten-Menü zu öffnen-->
+    <script type="text/javascript" src="js/nav.js"></script>
 	<title>WetterEi</title>
 </head>
 
 <body>
     <header>
-        <!--SideNavigation-->
+        <!--Seiten-Menü-->
         <div id="mySideNav" class="sideNav">
             <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
             <a href="index.html">Wetterdaten</a>
             <a href="clothes.html">Kleidung</a>
             <a href="light.html">Licht</a>
-            <a href="ueberUns.html">&Uuml;ber uns</a>
+            <a href="ueberUns.html" id="ueberUns">&Uuml;ber uns</a>
         </div>
 
-        <!--SideNavigation-Icon-->
+        <!--Icon für das Seiten-Menü-->
         <div class="navIconWrapper">
             <div class="sideNavIcon" onclick="openNav()"><img src="img/menu_icon.png" alt="Menu" id ="clothesNav"></i></div>
-            <!--Logo-->
+            <!--Name der App-->
             <div class="appName">WetterEi</div>
         </div>
-
-        <!-- Script to open nav-->
-        <script type="text/javascript" src="js/nav.js"></script>
     </header>
     <section>
-        <!-- Chicken dressed with temperatures -->
+        <!-- Bild des Hühnchens -->
         <div class="birdDiv">
-	        <img src="img/langkurz.gif" alt="Head" id="bird">         
+	        <img src="img/langkurz.gif" alt="Bird" id="bird">         
     	</div>
     <section>
     <footer>
         <p>&copy; 2016 Ein Projekt f&uuml;r Mosy/ITS</p>
     </footer>
-    <!-- Script to open nav-->
-    <script type="text/javascript" src="js/nav.js"></script>
-    <!-- Script to change color-->
-    <script type="text/javascript" src="js/changeColor.js"></script>
 </body>
 </html>

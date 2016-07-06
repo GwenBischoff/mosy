@@ -25,33 +25,37 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
-    <!-- Script to change color-->
+    <!-- Script um die Farbe zu ändern-->
     <script type="text/javascript" src="js/changeColor.js"></script>
+    <!--Die Daten vom Server zu bekommen-->
     <script type="text/javascript" src="js/ueberUns.js"></script>
+    <!--Script um die Seite bei verschiedenen Displaygrößen anzupassen-->
     <script type="text/javascript" src="js/setSizes.js"></script>
+    <!-- Script um Seiten-Menü zu öffnen-->
+    <script type="text/javascript" src="js/nav.js"></script>
 	<title>WetterEi</title>
 </head>
 
 <body>
     <header>
-        <!--SideNavigation-->
+        <!--Seiten-Menü-->
         <div id="mySideNav" class="sideNav">
             <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
             <a href="index.html">Wetterdaten</a>
             <a href="clothes.html">Kleidung</a>
             <a href="light.html">Licht</a>
-            <a href="ueberUns.html">&Uuml;ber uns</a>
+            <a href="ueberUns.html" id="ueberUns">&Uuml;ber uns</a>
         </div>
 
-        <!--SideNavigation-Icon-->
+        <!--Icon für das Seiten-Menü-->
         <div class="navIconWrapper">
             <div class="sideNavIcon" onclick="openNav()"><img src="img/menu_icon.png" alt="Menu"></div>
-            <!--Logo-->
+            <!--Name der App-->
             <div class="appName">WetterEi</div>
         </div>
     </header>
     <section>
-        <!-- Content -->
+        <!-- Text der Angezeigt wird -->
         <div class="textUeberUns">
             Wir sind Studenten des Departements DMI der HAW Hamburg. Genauer studieren wir Medientechnik und Media Systems. Diese Projekt war eine Gemeinschaftsarbeit der beiden Studiengänge im Rahmen der Studienfächer ITS und Mobile Systeme.
         </div>
@@ -63,7 +67,5 @@
     <footer>
         <p>&copy; 2016 Ein Projekt f&uuml;r Mosy/ITS</p>
     </footer>
-    <!-- Script to open nav-->
-    <script type="text/javascript" src="js/nav.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+/* Wenn Seiten-Menü geöffnet wird wird die Größe des Divs auf 20em gesetzt */
 function openNav() {
     document.getElementById("mySideNav").style.width = "20em";
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+/* Wenn Seiten-Menü geschlossen wird wird die Größe des Divs auf 0 gesetzt */
 function closeNav() {
     document.getElementById("mySideNav").style.width = "0";
 }

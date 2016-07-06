@@ -1,22 +1,24 @@
 $(document).on("ready", function(e) {
 
-    var red = 0;
-    var green = 142;
-    var blue = 255;
+    var red;
+    var green;
+    var blue;
     var socket = io.connect();
-
+    //Es werden Daten vom Server empfangen und die globalen Variablen gesetzt
     socket.on('ToApp', function (data) {
-        /*RGB-Werte vom Server in Variablen speichern*/
+        /*RGB-Werte und Temperatur von außen vom Server in Variablen speichern*/
         red = Math.round(JSON.parse(data)[0]);
         green = Math.round(JSON.parse(data)[1]);
         blue = Math.round(JSON.parse(data)[2]);
         tempOut = JSON.parse(data)[3];
-
+        //Farbe im Header/Footer ändern
         changeColor(red, green, blue);
+        // Bild des Entchen je nach Temperatur ändern
         changeBird(tempOut);
         
     });
-
+    /* Hier wird das Bild des Entchen je nach Temperatur geändern
+     * @param tempOut gibt die Außentemperatur an*/
     function changeBird(tempOut){
         $(this).tempOut = tempOut;
         if(tempOut<= 10){
