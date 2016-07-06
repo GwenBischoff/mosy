@@ -22,7 +22,7 @@ $(document).on("ready", function(e) {
     function changeBird(tempOut){
         $(this).tempOut = tempOut;
         if(tempOut<= 10){
-            //Mütze
+/*ändern*/            //Mütze
             $('#bird').attr('src', 'img/jacke.gif');
         }
         else if(tempOut> 10 && tempOut <= 15){
@@ -41,8 +41,12 @@ $(document).on("ready", function(e) {
             //Kurze Hose, Tshit
             $('#bird').attr('src', 'img/kurzkurz.gif');
         }
-        else if(tempOut> 30){
+        else if(tempOut> 30 && tempOut <= 40){
             //Baden
+            $('#bird').attr('src', 'img/sommer.gif');
+        }
+        else if(tempOut> 40){
+/*ändern*/            //Grill
             $('#bird').attr('src', 'img/sommer.gif');
         }
     }
