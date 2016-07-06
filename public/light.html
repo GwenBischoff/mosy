@@ -34,7 +34,7 @@
 
 <body>
     <header>
-        <!--SideNavigation-->
+        <!--Seiten-Menü-->
         <div id="mySideNav" class="sideNav">
             <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
             <a href="index.html">Wetterdaten</a>
@@ -43,22 +43,25 @@
             <a href="ueberUns.html">&Uuml;ber uns</a>
         </div>
 
-        <!--SideNavigation-Icon-->
+        <!--Icon für das Seiten-Menü-->
         <div class="navIconWrapper">
             <div class="sideNavIcon" onclick="openNav()"><img src="img/menu_icon.png" alt="Menu"></div>
-            <!--Logo-->
+            <!--Name der App-->
             <div class="appName">WetterEi</div>
         </div>
 
     </header>
     <section>
-        <!--Toggle-->
+        <!--Toggle-Buttons-->
         <div class="toggleWrapper">
+            <!--oberer Toggle-Buttons-->
             <div class="toggleDiv">
                 <div class="beschreibungToggleSize">
+                    <!--Beschreibung des oberen Toggle-Buttons-->
                     <div class="beschreibungToggle">Licht vom WetterEi</div>
                 </div>
                 <div class="toggleDivInner">
+                    <!--Toggle-Button mit EIN/AUS Beschreibung-->
                     <div class="toggleAus">AUS</div>
                     <div class="toggle toggle-selected" id="toggleLightOn">
                         <div><button></button></div>
@@ -66,11 +69,14 @@
                     <div class="toggleEin">EIN</div>
                 </div>
             </div>
+            <!--unterer Toggle-Buttons-->
             <div class="toggleDiv">
                 <div class="beschreibungToggleSize">
-                    <div class="beschreibungToggle">Licht vom Web steuern</div>
+                    <!--Beschreibung des unteren Toggle-Buttons-->
+                    <div class="beschreibungToggle">Farbe manuelle ändern</div>
                 </div>
                 <div class="toggleDivInner">
+                    <!--Toggle-Button mit EIN/AUS Beschreibung-->
                     <div class="toggleAus">AUS</div>
                     <div class="toggle" id="toggleColorFromApp">
                         <div><button></button></div>
@@ -79,31 +85,42 @@
                 </div>
             </div>
         </div>
-
+        <!--Slider-->
         <div class="allSliders">
+            <!--roter Slider-->
             <div class="sliders">
+                <!--Beschreibung für roten Slider-->
                 <div class="column sliderName">Rot</div>
                 <div class="column rangeAlign">
+                    <!--roter Slider-->
                     <input type="range" min="0" max="255" value="0" id="rangeRed" class="range">
                 </div>
+                <!--Text-Input roten Slider-->
                 <div class="column sliderValueDiv"><input id="textRed" class="column sliderValue" type="number" min="0" max="255" size="3" step="1" value="0"></div>
                 <!--<div id="textRangeRed" class="column sliderValue">0</div>
                 -->
             </div>
+            <!--grüner Slider-->
             <div class="sliders">
+                <!--Beschreibung für grünen Slider-->
                 <div class="column sliderName">Gr&uuml;n</div>
                 <div class="column rangeAlign">
+                    <!--grüner Slider-->
                     <input type="range" min="0" max="255" value="0" id="rangeGreen" class="range"> 
                 </div>
+                <!--Text-Input grünen Slider-->
                 <div class="column sliderValueDiv"><input id="textGreen" class="column sliderValue" type="number" min="0" max="255" size="3" step="1" value="0"></div>
                 <!--<div id="textRangeGreen" class="column sliderValue">0</div>--> 
             </div>
-
+            <!--blauer Slider-->
             <div class="sliders">
+                <!--Beschreibung für blauen Slider-->
                 <div class="column sliderName">Blau</div>
                 <div class="column rangeAlign">
+                    <!--blauer Slider-->
                     <input type="range" min="0" max="255" value="0" id="rangeBlue" class="range">
                 </div>
+                <!--Text-Input blauen Slider-->
                 <div class="column sliderValueDiv"><input id="textBlue" class="column sliderValue" type="number" min="0" max="255" size="3" step="1" value="0"></div>
                 <!--<div id="textRangeBlue" class="column sliderValue">0</div>-->
             </div>
