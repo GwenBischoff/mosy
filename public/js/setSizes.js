@@ -34,14 +34,14 @@ $(document).ready(function(){
         //aktuelle Höhe wird abgerufen
         var height = $(window).height();
         //Variable wird mit einem 200tel der aktuellen Höhe gefüllt
-        var heightPaddingSlider = String(Math.round(height/200))+'%';
+        var heightPaddingSlider = String(Math.round(height/150))+'%';
         //Variable wird mit einem 100tel der aktuellen Höhe gefüllt
         var ueberUnsPadding = String(Math.round(height/100))+'%';
         //Variable wird mit einem 40tel der aktuellen Höhe gefüllt
         var wetterDatenPadding = String(Math.round(height/45))+'%';
         //Elemente werden mit den neuen Variablen gestylt
-        $('.toggleDiv').css('padding-bottom', heightPaddingSlider);
-        $('.sliders').css('padding-bottom', heightPaddingSlider);
+        $('.toggleDiv').css('padding-top', heightPaddingSlider);
+        $('.sliders').css('padding-top', heightPaddingSlider);
         $('.textUeberUns').css('padding-top', ueberUnsPadding);
         $('.textUeberUns').css('padding-left', ueberUnsPadding);
         $('.textUeberUns').css('padding-right', ueberUnsPadding);
