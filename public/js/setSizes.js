@@ -12,7 +12,7 @@ $(document).ready(function(){
         var width = $(window).width();
         //Elemente werden je nach Breite des Fensters gestylt
         if(width > 650){
-            $('.birdDiv').css('margin-top','2em');
+            $('.birdDiv').css('margin-top','5%');
         }
         if(width < 400){
             $('.navIconWrapper').css('padding-top','0.3em');
@@ -37,12 +37,15 @@ $(document).ready(function(){
         var heightPaddingSlider = String(Math.round(height/200))+'%';
         //Variable wird mit einem 100tel der aktuellen Höhe gefüllt
         var ueberUnsPadding = String(Math.round(height/100))+'%';
+        //Variable wird mit einem 40tel der aktuellen Höhe gefüllt
+        var wetterDatenPadding = String(Math.round(height/45))+'%';
         //Elemente werden mit den neuen Variablen gestylt
         $('.toggleDiv').css('padding-bottom', heightPaddingSlider);
         $('.sliders').css('padding-bottom', heightPaddingSlider);
         $('.textUeberUns').css('padding-top', ueberUnsPadding);
         $('.textUeberUns').css('padding-left', ueberUnsPadding);
         $('.textUeberUns').css('padding-right', ueberUnsPadding);
+        $('#mainMenu').css('margin-top', wetterDatenPadding);
     }
     setAccordingWidth();    
     setAccordingHeight();

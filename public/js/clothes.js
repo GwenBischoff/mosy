@@ -21,11 +21,11 @@ $(document).on("ready", function(e) {
      * @param tempOut gibt die Außentemperatur an*/
     function changeBird(tempOut){
         $(this).tempOut = tempOut;
-        if(tempOut<= 5){
+        if(tempOut<= 0){
             //Eiszapfen
             $('#bird').attr('src', 'img/kaltkalt.gif');
         }
-        if(tempOut> 5 && tempOut <= 10){
+        if(tempOut> 0 && tempOut <= 10){
             //Mütze
             $('#bird').attr('src', 'img/muetze.gif');
         }
