@@ -12,8 +12,6 @@ FONT
 @font-face{
     font-family: 'PT Sans';
     src: url('../font/PT_Sans.woff2') format('woff2');
-    font-family: 'FontAwesome';
-    src: url('../font/fontawesome-webfont.woff2') format('woff2');
     font-style: normal;
     font-weight: 400;
 }
